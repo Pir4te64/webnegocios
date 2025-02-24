@@ -1,0 +1,29 @@
+/* src/components/Process/InvestmentProcess.css */
+.process-section {
+  background-color: #fc6c7c;
+  color: white;
+  height: 100vh; /* Ocupa el 100% del viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.process-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.process-section p,
+.process-section ol {
+  max-width: 800px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.process-section li {
+  margin: 10px 0;
+}
