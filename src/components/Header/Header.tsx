@@ -26,36 +26,34 @@ const Header: React.FC<HeaderProps> = ({ fullpageApi }) => {
     };
 
     return (
-        <header className="header">
+        <header className="header2">
             {/* Franja superior fija para el logo */}
-            <div className="logo-container" onClick={() => fullpageApi?.moveTo(1)}>
-                <img src="/logo.png" alt="Logo" className="logo-img" />
-            </div>
+            
             {/* Navbar con efecto glass sticky, centrado */}
             <nav className="navbar-glass">
                 <ul className="navbar-menu">
                     <li>
-                        <a href="#" onClick={(e) => handleNavClick(1, e)}>
+                        <a href="Banner" onClick={(e) => handleNavClick(1, e)}>
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#" onClick={(e) => handleNavClick(2, e)}>
+                        <a href="AboutUs" onClick={(e) => handleNavClick(2, e)}>
                             About Us
                         </a>
                     </li>
                     <li>
-                        <a href="#" onClick={(e) => handleNavClick(3, e)}>
+                        <a href="InvestmentSectors" onClick={(e) => handleNavClick(3, e)}>
                             Investment Sectors
                         </a>
                     </li>
                     <li>
-                        <a href="#" onClick={(e) => handleNavClick(4, e)}>
+                        <a href="InvestmentProcess" onClick={(e) => handleNavClick(4, e)}>
                             Investment Process
                         </a>
                     </li>
                     <li>
-                        <a href="#" onClick={(e) => handleNavClick(5, e)}>
+                        <a href="ContactUs" onClick={(e) => handleNavClick(5, e)}>
                             Contact Us
                         </a>
                     </li>

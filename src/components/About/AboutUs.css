@@ -1,70 +1,119 @@
-/* src/components/About/AboutUs.css */
-.about-section {
-  position: relative;
+:root {
+  --primary-bg: rgb(0, 0, 0);
+  --text-color-light: rgb(197, 197, 197);
+  --white: #fff;
+}
+
+/* ------------------------- */
+/* Sección AboutUs           */
+/* ------------------------- */
+.about-section1 {
   width: 100%;
   height: 100vh; /* Ocupa el 100% del viewport */
+  position: relative;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-  color: rgb(197, 197, 197);
 }
 
-/* Video de fondo (si se utiliza) */
-.background-video {
+/* Video de fondo en AboutUs */
+.background-video1 {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 40px;  /* Asegúrate de incluir la unidad */
+  width: 90%;
+  height: 90%;
   object-fit: cover;
   z-index: -1;
-  border-radius: 100px;
+  border-radius: 40px;
+  box-shadow: var(--white) 0px 0px 5px, var(--white) 0px 0px 30px;
 }
 
-/* Título principal con efectos similares al banner */
-.about-section h2 {
+/* Contenedor de contenido en AboutUs */
+.about-content1 {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color-light);
+}
+
+/* Columna de texto en AboutUs */
+.about-text1 {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+  /* Ajusta según el layout deseado */
+  margin-left: -100px;
+}
+
+/* Título principal en AboutUs con estilo similar al Banner */
+.about-text1 h2 {
   font-size: 4rem;
-  margin-bottom: 20px;
-  font-family: "ProductSans", sans-serif;
+  filter: drop-shadow(0 0 10px rgba(233,230,230,0.445));
   line-height: 1.2;
-  filter: drop-shadow(0 0 10px rgba(233, 230, 230, 0.445));
-  text-align: center;
 }
 
-/* Si deseas dividir el título en dos estilos (como en el banner), podrías usar spans internos */
-.about-section h2 .line1 {
+/* Si deseas dividir el título en dos estilos, puedes usar spans internos (opcional) */
+.about-text1 h2 .line1 {
+  display: block;
+  margin: 0;
+  line-height: 1.1;
   background: linear-gradient(to right, rgb(236,236,236), white, rgb(211,210,210));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.5rem;
 }
 
-.about-section h2 .line2 {
+.about-text1 h2 .line2 {
+  display: block;
+  margin-top: -45px; /* Ajusta para acercar la línea */
+  margin-bottom: 0;
   font-family: "ProductSans", sans-serif;
+  color: white;
   font-weight: bolder;
-  font-size: 5rem;
+  font-size: 6rem;
   background: linear-gradient(to right, rgb(212,212,212), white, rgb(206,206,206));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 
-/* Párrafos y listas con la misma tipografía */
-.about-section p,
-.about-section ul {
+/* Párrafos y listas en AboutUs */
+.about-text1 p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  max-width: 800px;
+  font-family: "ProductSans", sans-serif;
+  color: var(--white);
+}
+
+.about-text1 ul {
   font-size: 1.5rem;
   max-width: 800px;
   margin: 10px auto;
-  font-family: "ProductSans", sans-serif;
   text-align: center;
+  font-family: "ProductSans", sans-serif;
+  color: var(--white);
 }
 
-/* Estilo para cada ítem de la lista */
-.about-section li {
+.about-text1 li {
   margin: 5px 0;
   font-family: "ProductSans", sans-serif;
+  color: var(--white);
 }
+
+/* ------------------------- */
+/* Responsive AboutUs        */
+/* ------------------------- */
+@media (max-width: 768px) {
+  .about-content1 {
+    flex-direction: column;
+    align-items: cent
+  }}

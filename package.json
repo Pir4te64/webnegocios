@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.48",
+    "emailjs-com": "^3.2.0",
     "fullpage.js": "^4.0.33",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
