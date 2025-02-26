@@ -1,36 +1,24 @@
 /* src/components/Banner/Banner.css */
-
 .banner {
   width: 100%;
   height: 100vh; /* Ocupa el 100% del viewport */
-  display: flex;
-  flex-direction: row; /* Dos columnas: texto e imagen */
-  box-sizing: border-box;
-  background: url("/public/fondobanner1.jpeg") no-repeat center center/cover;
-}
-
-/* Contenedor de texto: ocupa la mitad */
-.banner-text {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  box-sizing: border-box;
   text-align: center;
   color: white;
-  /* Puedes mantener un fondo semitransparente para mejorar la legibilidad */
-  background: rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para títulos, párrafos, botones, etc. */
-.banner-text h1 {
-  font-size: 3rem;
-  margin-bottom: 5px;
+.banner h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
   font-family: "ProductSans", sans-serif;
 }
 
-.banner-text p {
+.banner p {
   font-size: 1.5rem;
   margin-bottom: 30px;
   max-width: 800px;
@@ -57,7 +45,7 @@
 .learn-more {
   background-color: #fff;
   color: #000;
-  font-family: ProductSans;
+  font-family: "ProductSans", sans-serif;
 }
 
 .learn-more:hover {
@@ -93,27 +81,33 @@
   font-family: "ProductSans", sans-serif;
 }
 
-/* Contenedor de imagen: ocupa la otra mitad */
-.banner-image {
-  width: 50%;
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background: url("/public/fondobanner2.jpg") no-repeat center center/cover;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.banner-lower {
-  font-family: "ProductSans", sans-serif;
-  font-style: thin;
-  font-weight: 300;
-}
 
-/* Responsive: en pantallas pequeñas, mostrar las secciones en columna */
+/* Responsive: en pantallas pequeñas, ajustar tamaños */
 @media (max-width: 768px) {
-  .banner {
-    flex-direction: column;
+  .banner h1 {
+    font-size: 2.5rem;
   }
-  .banner-text,
-  .banner-image {
-    width: 100%;
-    height: 50vh;
+  .banner p {
+    font-size: 1.2rem;
+  }
+  .banner-buttons button {
+    font-size: 0.9rem;
+  }
+  .stat h2 {
+    font-size: 1.5rem;
+  }
+  .stat p {
+    font-size: 0.9rem;
   }
 }

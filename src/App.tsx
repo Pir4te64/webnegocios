@@ -23,26 +23,25 @@ const App: React.FC = () => {
       <ReactFullpage
         navigation
         anchors={['home', 'about', 'sectors', 'process', 'contact']}
-        sectionsColor={['#282c34', '#ff5f45', '#0798ec', '#fc6c7c', '#282828']}
         credits={{ enabled: false }}
         render={({ fullpageApi }) => {
           // Almacenamos la instancia en la ref
           fullpageApiRef.current = fullpageApi;
           return (
             <ReactFullpage.Wrapper>
-              <div className="section" data-anchor="home">
+              <div className="section" data-anchor="banner">
                 <Banner />
               </div>
-              <div className="section" data-anchor="about">
+              <div className="section" data-anchor="about-section">
                 <AboutUs />
               </div>
-              <div className="section" data-anchor="sectors">
+              <div className="section" data-anchor="sectors-section">
                 <InvestmentSectors />
               </div>
-              <div className="section" data-anchor="process">
+              <div className="section" data-anchor="process-section">
                 <InvestmentProcess />
               </div>
-              <div className="section" data-anchor="contact">
+              <div className="section" data-anchor="contact-section">
                 <ContactUs />
               </div>
             </ReactFullpage.Wrapper>

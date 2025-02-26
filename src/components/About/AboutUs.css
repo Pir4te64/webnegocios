@@ -1,14 +1,30 @@
 /* src/components/About/AboutUs.css */
 .about-section {
-  background-color: #ff5f45;
+  position: relative;
   color: white;
-  height: 100vh; /* Ocupa el 100% del viewport */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* Video de fondo */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1; /* Lo coloca detrás del contenido */
 }
 
 .about-section h2 {
@@ -26,4 +42,77 @@
 
 .about-section li {
   margin: 5px 0;
+}
+a/* Contenedor principal a pantalla completa */
+.about-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000; /* Para evitar fondo blanco */
+}
+
+/* Video de fondo */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Tarjeta About Us centrada con efecto hover */
+.hover-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: rgba(26, 26, 26, 0.9);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+}
+
+.about-section:hover .hover-card {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Estilos para textos dentro de la tarjeta */
+.hover-card h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hover-card p,
+.hover-card ul {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.hover-card li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+/* Contenedor para el parallax */
+.parallaxContainer {
+  position: absolute;
+  bottom: 20px; /* o como prefieras posicionarlo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 2;
 }
