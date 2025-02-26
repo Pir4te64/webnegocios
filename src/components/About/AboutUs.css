@@ -1,118 +1,70 @@
 /* src/components/About/AboutUs.css */
 .about-section {
   position: relative;
-  color: white;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* Ocupa el 100% del viewport */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 20px;
   box-sizing: border-box;
   overflow: hidden;
+  color: rgb(197, 197, 197);
 }
 
-
-/* Video de fondo */
+/* Video de fondo (si se utiliza) */
 .background-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1; /* Lo coloca detrás del contenido */
+  z-index: -1;
+  border-radius: 100px;
 }
 
+/* Título principal con efectos similares al banner */
 .about-section h2 {
-  font-size: 2.5em;
+  font-size: 4rem;
   margin-bottom: 20px;
+  font-family: "ProductSans", sans-serif;
+  line-height: 1.2;
+  filter: drop-shadow(0 0 10px rgba(233, 230, 230, 0.445));
   text-align: center;
 }
 
+/* Si deseas dividir el título en dos estilos (como en el banner), podrías usar spans internos */
+.about-section h2 .line1 {
+  background: linear-gradient(to right, rgb(236,236,236), white, rgb(211,210,210));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-section h2 .line2 {
+  font-family: "ProductSans", sans-serif;
+  font-weight: bolder;
+  font-size: 5rem;
+  background: linear-gradient(to right, rgb(212,212,212), white, rgb(206,206,206));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Párrafos y listas con la misma tipografía */
 .about-section p,
 .about-section ul {
+  font-size: 1.5rem;
   max-width: 800px;
+  margin: 10px auto;
+  font-family: "ProductSans", sans-serif;
   text-align: center;
-  margin: 10px 0;
 }
 
+/* Estilo para cada ítem de la lista */
 .about-section li {
   margin: 5px 0;
-}
-a/* Contenedor principal a pantalla completa */
-.about-section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #000; /* Para evitar fondo blanco */
-}
-
-/* Video de fondo */
-.background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: -2;
-}
-
-/* Tarjeta About Us centrada con efecto hover */
-.hover-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  max-width: 600px;
-  padding: 30px;
-  background-color: rgba(26, 26, 26, 0.9);
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  transform: translate(-50%, -50%) scale(0.8);
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  z-index: 1;
-}
-
-.about-section:hover .hover-card {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* Estilos para textos dentro de la tarjeta */
-.hover-card h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.hover-card p,
-.hover-card ul {
-  font-size: 1em;
-  margin: 10px 0;
-}
-
-.hover-card li {
-  list-style: none;
-  margin: 5px 0;
-}
-
-/* Contenedor para el parallax */
-.parallaxContainer {
-  position: absolute;
-  bottom: 20px; /* o como prefieras posicionarlo */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 800px;
-  z-index: 2;
+  font-family: "ProductSans", sans-serif;
 }

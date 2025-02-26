@@ -7,6 +7,8 @@ import AboutUs from './components/About/AboutUs';
 import InvestmentSectors from './components/Sectors/InvestmentSectors';
 import InvestmentProcess from './components/Process/InvestmentProcess';
 import ContactUs from './components/Contact/ContactUs';
+import './index.css';
+
 
 interface FullPageApi {
   moveTo: (section: number, slide?: number) => void;

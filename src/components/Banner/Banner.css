@@ -1,24 +1,75 @@
-/* src/components/Banner/Banner.css */
 .banner {
   width: 100%;
   height: 100vh; /* Ocupa el 100% del viewport */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   padding: 20px;
   box-sizing: border-box;
-  text-align: center;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.banner h1 {
+/* Video de fondo */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 100px;
+  
+} 
+
+/* Contenedor para dividir en dos columnas */
+.banner-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(197, 197, 197);
+}
+
+/* Columna del texto */
+.banner-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+}
+
+/* Título dividido en dos estilos */
+.banner-text h1 {
   font-size: 4rem;
   margin-bottom: 20px;
   font-family: "ProductSans", sans-serif;
+  line-height: 1.2;
+  filter: drop-shadow(0 0 10px rgba(233, 230, 230, 0.445));
 }
 
-.banner p {
+.banner-text h1 .line1 {
+  background: linear-gradient(to right, rgb(236, 236, 236), white, rgb(211, 210, 210));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.banner-text h1 .line2 {
+  font-family: "ProductSans", sans-serif; /* Cambia "AnotherFont" por la fuente deseada */
+  color: white; /* Puedes cambiar el color según tu preferencia */
+  font-weight: bolder;
+  font-size: 5rem;
+  background: linear-gradient(to right, rgb(212, 212, 212), white, rgb(206, 206, 206));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Párrafo y botones (se mantienen igual) */
+.banner-text p {
   font-size: 1.5rem;
   margin-bottom: 30px;
   max-width: 800px;
@@ -27,7 +78,7 @@
 
 .banner-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   margin-bottom: 40px;
 }
@@ -45,7 +96,6 @@
 .learn-more {
   background-color: #fff;
   color: #000;
-  font-family: "ProductSans", sans-serif;
 }
 
 .learn-more:hover {
@@ -63,16 +113,19 @@
   color: rgb(90, 89, 89);
 }
 
+/* Estadísticas */
 .banner-stats {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 40px;
+  color: white;
 }
 
 .stat h2 {
   font-size: 2rem;
   margin: 0;
   font-family: "ProductSans", sans-serif;
+  color: white;
 }
 
 .stat p {
@@ -81,24 +134,53 @@
   font-family: "ProductSans", sans-serif;
 }
 
+/* Columna de la imagen */
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+
+}
+
+.banner-image img {
+  width: 120%; /* Imagen un poco más grande */
+  flex: 1;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
+  animation: blinkShadow 12s infinite ease-in-out;
+  margin-left: 150px;
+  
+}
+
+@keyframes blinkShadow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+  }
 }
 
 
-/* Responsive: en pantallas pequeñas, ajustar tamaños */
+/* Responsive: en pantallas pequeñas, ajustar tamaños y cambiar a columna */
 @media (max-width: 768px) {
-  .banner h1 {
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .banner-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .banner-text h1 {
     font-size: 2.5rem;
   }
-  .banner p {
+  .banner-text p {
     font-size: 1.2rem;
   }
   .banner-buttons button {

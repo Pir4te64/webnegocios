@@ -1,36 +1,7 @@
-/* src/components/Header/Header.css */
-
-/* Contenedor global del Header */
-.header {
-  width: 100%;
-}
-
-/* Agrupamos logo y navbar en un contenedor fijo */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1100;
-}
-
-/* Franja superior para el logo */
-.logo-container {
-  background-color: #000;
-  padding: 10px 30px;
-  display: flex;
-  justify-content: flex-start; /* Alinea el contenido a la izquierda */
-  align-items: center;
-}
-
-.logo-img {
-  height: 60px;
-  justify-content: center;
-}
-
-/* Navbar con efecto glass, fijo debajo del logo */
+/* Navbar con efecto glass y glow, fijo debajo del logo */
 .navbar-glass {
   position: fixed;
-  top: 70px; /* Ajusta según la altura del logo-container */
+  top: 70px; /* Se mantiene según la altura del logo-container */
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -40,13 +11,14 @@
     rgba(255, 255, 255, 0.2),
     rgba(255, 255, 255, 0.1)
   );
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* Se añade un glow sin afectar la alineación */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 12px 20px;
   border-radius: 12px;
-  z-index: 1090; /* Menor que el contenedor global del header */
+  z-index: 1090;
   display: flex;
   justify-content: center;
 }
@@ -62,7 +34,7 @@
   justify-content: center;
 }
 
-/* Enlaces del menú */
+/* Enlaces del menú con glow en el texto */
 .navbar-menu li a {
   text-decoration: none;
   font-family: "ProductSans", sans-serif;
@@ -70,35 +42,26 @@
   color: #fff;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: text-shadow 0.3s ease;
+  /* Glow sutil inicial */
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
 }
 
-/* Hover: invierte colores */
+/* Hover: intensifica el glow en el texto sin cambiar el fondo */
 .navbar-menu li a:hover {
-  background-color: #fff;
-  color: #000;
+  text-shadow: 0 0 50px rgba(255, 255, 255, 1);
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .navbar-menu {
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .navbar-menu li a {
-    padding: 6px 10px;
-    font-size: 0.9rem;
-  }
+/* Los estilos del logo se mantienen sin cambios para respetar su dimensión */
+.logo-container {
+  background-color: #000;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-@media (max-width: 480px) {
-  .navbar-glass {
-    width: 95%;
-    padding: 8px 10px;
-  }
-  .navbar-menu li a {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-  }
+.logo-img {
+  height: 60px;
+  justify-content: center;
 }
