@@ -1,3 +1,5 @@
+/* Estilos base */
+
 /* Navbar con efecto glass y glow, fijo debajo del logo */
 .navbar-glass {
   position: fixed;
@@ -11,7 +13,6 @@
     rgba(255, 255, 255, 0.2),
     rgba(255, 255, 255, 0.1)
   );
-  /* Se añade un glow sin afectar la alineación */
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -43,16 +44,14 @@
   padding: 8px 12px;
   border-radius: 6px;
   transition: text-shadow 0.3s ease;
-  /* Glow sutil inicial */
   text-shadow: 0 0 2px rgb(255, 255, 255);
 }
 
-/* Hover: intensifica el glow en el texto sin cambiar el fondo */
 .navbar-menu li a:hover {
   text-shadow: 0 0 50px rgba(255, 255, 255, 1);
 }
 
-/* Los estilos del logo se mantienen sin cambios para respetar su dimensión */
+/* Estilos del logo */
 .logo-container {
   background-color: #000;
   padding: 20px 30px;
@@ -61,10 +60,66 @@
   align-items: center;
   margin-left: 30px;
   margin-top: 20px;
-  
 }
 
 .logo-img {
   height: 60px;
   justify-content: center;
+}
+
+/* Media query para tablets (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .navbar-glass {
+    display: none;
+  }
+
+  .navbar-menu {
+    gap: 15px;
+  }
+
+  .navbar-menu li a {
+    padding: 7px 10px;
+    font-size: 15px;
+  }
+
+  .logo-container {
+    padding: 15px 25px;
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+}
+
+/* Media query para móviles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .navbar-glass {
+    top: 100px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    max-width: 90%;
+  }
+
+  .navbar-menu {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-menu li a {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .logo-container {
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
 }

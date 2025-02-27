@@ -12,9 +12,6 @@ const AboutUs: React.FC = () => (
     <div className="about-content1">
       <div className="about-text1">
         <h2>
-          {/* Opcionalmente, puedes dividir el título en dos líneas usando spans */}
-          <span className="line1">About Us</span>
-          <br />
           <span className="line2">About Us</span>
         </h2>
         <p>

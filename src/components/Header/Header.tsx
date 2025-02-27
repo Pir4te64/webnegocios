@@ -27,8 +27,6 @@ const Header: React.FC<HeaderProps> = ({ fullpageApi }) => {
 
     return (
         <header className="header2">
-            {/* Franja superior fija para el logo */}
-            
             {/* Navbar con efecto glass sticky, centrado */}
             <nav className="navbar-glass">
                 <ul className="navbar-menu">
