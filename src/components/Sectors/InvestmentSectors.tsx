@@ -2,11 +2,12 @@
 import React from 'react';
 import "./InvestmentSectors.css";
 import Fondo from "../../../public/Fondo3.mp4";
+
 const InvestmentSectors: React.FC = () => (
   <div className="sectors-section5">
     {/* Video de fondo */}
-    <video className="background-video2" autoPlay muted loop>
-    <source src= {Fondo} type="video/mp4" />
+    <video className="background-video5" autoPlay muted loop>
+      <source src={Fondo} type="video/mp4" />
       Tu navegador no soporta el elemento de video.
     </video>
     <div className="sectors-content5">

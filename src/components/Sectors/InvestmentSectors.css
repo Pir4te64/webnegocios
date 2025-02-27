@@ -1,3 +1,9 @@
+:root {
+  --primary-bg: rgb(0, 0, 0);
+  --white: #fff;
+  --text-color: rgb(197, 197, 197);
+  --font-family: "ProductSans", sans-serif;
+}
 
 /* Contenedor de la sección con video de fondo */
 .sectors-section5 {
@@ -14,7 +20,7 @@
 /* Video de fondo */
 .background-video5 {
   position: absolute;
-  top: 40px; /* Asegúrate de incluir la unidad */
+  top: 40px; /* Se incluye "px" */
   width: 90%;
   height: 90%;
   object-fit: cover;
@@ -76,14 +82,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .sectors-content2 h2 {
+  .sectors-content5 h2 {
     font-size: 2.5rem;
   }
-  .sectors-content2 h3 {
+  .sectors-content5 h3 {
     font-size: 1.8rem;
   }
-  .sectors-content2 p,
-  .sectors-content2 ul {
+  .sectors-content5 p,
+  .sectors-content5 ul {
     font-size: 1rem;
   }
 }
