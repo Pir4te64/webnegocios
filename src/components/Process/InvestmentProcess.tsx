@@ -9,7 +9,7 @@ const InvestmentProcess: React.FC = () => (
       <source src="/Fondo2.mp4" type="video/mp4" />
       Tu navegador no soporta el elemento de video.
     </video>
-    <div className="process-content2">
+    <div className="process-content4">
       <h2>Our Investment Process</h2>
       <p>
         We follow a rigorous process to ensure every investment is strategically structured and aligned with investor goals:

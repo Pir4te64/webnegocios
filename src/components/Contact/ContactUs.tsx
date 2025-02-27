@@ -30,7 +30,7 @@ const ContactUs: React.FC = () => {
         <div className="contact-section2">
             {/* Video de fondo */}
             <video className="background-video1" autoPlay muted loop>
-                <source src="/Fondo1.mp4" type="video/mp4" />
+                <source src="/Fondo2.mp4" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
             </video>
             <div className="contact-content2">

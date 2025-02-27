@@ -89,27 +89,6 @@
 
 
 
-
-.learn-more1 {
-  background-color: #fff;
-  color: #000;
-}
-
-.learn-more1:hover {
-  background-color: rgb(47, 47, 47);
-  color: #fff;
-}
-
-.browse-properties1 {
-  background-color: #282828;
-  color: #fff;
-}
-
-.browse-properties1:hover {
-  background-color: white;
-  color: rgb(90, 89, 89);
-}
-
 /* Estadísticas */
 .banner-stats1 {
   display: flex;
