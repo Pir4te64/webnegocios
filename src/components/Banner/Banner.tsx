@@ -2,10 +2,10 @@ import React from 'react';
 
 const Banner: React.FC = () => {
   return (
-    <section className="w-full h-screen relative flex items-center justify-center box-border">
-      {/* Video de fondo */}
+    <section className="w-full h-screen relative flex items-center justify-center box-border font-ProductSans">
+      {/* Video de fondo para desktop */}
       <video
-        className="absolute inset-0 w-full h-full object-cover -z-10 shadow-lg"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover -z-10 shadow-lg"
         autoPlay
         muted
         loop
@@ -14,13 +14,20 @@ const Banner: React.FC = () => {
         Tu navegador no soporta el video.
       </video>
 
+      {/* Imagen de fondo para mobile */}
+      <img
+        src="/Global.jpeg"
+        alt="Mobile Background"
+        className="block md:hidden absolute inset-0 w-full h-full object-cover -z-10"
+      />
+
       {/* Logo para desktop (visible en md y superiores) */}
       <img
         src="/logoalta.png"
         alt="Logo"
         className="hidden md:block absolute top-24 left-24 w-36 z-20"
       />
-      {/* Logo para mobile (visible en pantallas pequeñas) */}
+      {/* Logo para mobile (centrado arriba) */}
       <img
         src="/logoalta.png"
         alt="Logo"
@@ -31,17 +38,17 @@ const Banner: React.FC = () => {
       <div className="flex flex-col md:flex-row items-center justify-between w-11/12 max-w-6xl z-10 px-4">
         {/* Columna de texto */}
         <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
-          <h1 className="mt-5 ProductSans-Black drop-shadow-md">
+          <h1 className="mt-5 drop-shadow-md">
             {/* Línea grande con degradado */}
             <span className="block text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent leading-tight">
               Global Investment Opportunities with U.S.
             </span>
             {/* Línea secundaria */}
-            <span className="block mt-4 text-2xl md:text-4xl ProductSans-Black text-white">
+            <span className="block mt-4 text-2xl md:text-4xl text-white">
               Security and Compliance
             </span>
             {/* Texto explicativo */}
-            <span className="block mt-2 text-lg md:text-2xl ProductSans-Black text-white max-w-3xl">
+            <span className="block mt-2 text-lg md:text-2xl text-white max-w-3xl">
               At Alta Group Miami, we connect investors with high-potential projects worldwide,
               ensuring compliance with U.S. regulations for maximum security and transparency.
             </span>

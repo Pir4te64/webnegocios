@@ -34,7 +34,7 @@ const ContactUs: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay oscuro para mejorar legibilidad */}
+      {/* Overlay oscuro para mejorar la legibilidad */}
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Contenedor principal */}
@@ -50,7 +50,9 @@ const ContactUs: React.FC = () => {
             or a family office, we provide the expertise and strategic insights needed
             to navigate today’s complex investment landscape.
           </p>
-          <h3 className="text-xl font-bold text-white mt-4">Contact Us Today</h3>
+          <h3 className="text-xl font-bold text-white mt-4">
+            Contact Us Today
+          </h3>
           <p className="text-sm text-white">
             Secure your next investment with the strength of U.S. compliance and global expertise.
           </p>
@@ -65,13 +67,19 @@ const ContactUs: React.FC = () => {
         </div>
 
         {/* Sección del formulario de contacto */}
-        <div id="contact-form" className="bg-white/20 backdrop-blur-sm rounded-lg p-6 shadow-md">
+        <div
+          id="contact-form"
+          className="bg-white/20 backdrop-blur-sm rounded-lg p-6 shadow-md"
+        >
           <h2 className="text-2xl font-bold text-white text-center mb-4">
             Contact Us
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-white text-sm font-medium mb-1">
+              <label
+                htmlFor="name"
+                className="block text-white text-sm font-medium mb-1"
+              >
                 Name
               </label>
               <input
@@ -85,7 +93,10 @@ const ContactUs: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-white text-sm font-medium mb-1">
+              <label
+                htmlFor="email"
+                className="block text-white text-sm font-medium mb-1"
+              >
                 Email
               </label>
               <input
@@ -99,7 +110,10 @@ const ContactUs: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-white text-sm font-medium mb-1">
+              <label
+                htmlFor="message"
+                className="block text-white text-sm font-medium mb-1"
+              >
                 Message
               </label>
               <textarea
