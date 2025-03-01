@@ -1,27 +1,25 @@
-:root {
-  background-color: rgb(0, 0, 0);
-  font-family: "Popins", sans-serif;
-  letter-spacing: 0.5px;
-}
+@import "tailwindcss";
+
+
 
 .fp-nav ul li a,
 .fp-nav ul li a span {
-  background-color: #fff !important; /* Fondo blanco */
-  width: 16px !important;
-  height: 16px !important;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8) !important;
-  border: none !important;
+  background-color: #ffffff; /* Fondo blanco */
+  width: 16px;
+  height: 16px; 
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  border: none ;
 }
 
 /* Para el botón activo */
 .fp-nav ul li.active a,
 .fp-nav ul li.active a span {
-  background-color: white !important;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8) !important;
+  background-color: white ;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8) ;
 }
 
 /* Opcional: posicionar la navegación a la izquierda */
 .fp-nav {
-  left: 20px !important;
-  right: auto !important;
+  left: 20px;
+  right: auto;
 }

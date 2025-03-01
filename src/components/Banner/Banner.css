@@ -12,12 +12,10 @@
 /* Video de fondo */
 .banner-video {
   position: absolute;
-  top: 40px; /* Ajusta según tu diseño */
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
-  border-radius: 40px;
   box-shadow: #fff 0px 0px 5px, #fff 0px 0px 30px;
 }
 
@@ -36,14 +34,14 @@
 .banner-text {
   flex: 1;
   text-align: left;
-  padding-right: 20px;
-  margin-left: -100px; /* Ajusta si deseas que el texto quede más centrado */
+  justify-items: center;
 }
 
 .banner-text h1 {
-  font-size: 4rem;
+  margin-top: 20px;
+  font-size: 2rem;
   font-family: "ProductSans", sans-serif;
-  filter: drop-shadow(0 0 10px rgba(233, 230, 230, 0.445));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.445));
 }
 
 /* Línea 1 (texto más pequeño, en cursiva) */
@@ -73,18 +71,37 @@
   font-family: "ProductSans", sans-serif;
   color: white;
   font-weight: bolder;
-  font-size: 6rem;
+  font-size: 4rem;
   background: linear-gradient(
     to right,
-    rgb(212, 212, 212),
+    rgb(203, 203, 203),
     white,
-    rgb(206, 206, 206)
+    rgb(191, 191, 191)
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
 }
+
+.banner-text h1  .line3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  max-width: 800px;
+  font-family: "ProductSans", sans-serif;
+  color: white;
+
+
+}
+
+.banner-text h1 .line4 {
+  font-size: 1.5rem;
+  font-family: "ProductSans", sans-serif;
+  color: rgb(255, 255, 255);
+line-height: 0.3;
+
+}
+
 
 .banner-text p {
   font-size: 1.5rem;
@@ -99,18 +116,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 90px;
 }
 
 .banner-image img {
-  width: 100%;
+  width: 70%;
   flex: 1;
-  border-radius: 30px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  border-radius: 90px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
   opacity: 0.8;
   animation: blinkShadow 12s infinite ease-in-out;
   margin-top: 10px;
   margin: auto;
+  position: relative;
+  transform: translateX(50px); /* Mueve la imagen un poco a la derecha */
 }
 
 /* Animación de "parpadeo" del shadow */
@@ -128,8 +147,8 @@
 .banner-logo {
   position: absolute;
   top: 100px; /* Ajusta según tu preferencia */
-  left: 180px; /* Ajusta según tu preferencia */
-  width: 200px;
+  left: 90px; /* Ajusta según tu preferencia */
+  width: 150px;
   height: auto;
   z-index: 2; /* Para que quede encima del video */
 }
