@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-
+.fp-watermark {
+  display: none;
+  }
 
 .fp-nav ul li a,
 .fp-nav ul li a span {
