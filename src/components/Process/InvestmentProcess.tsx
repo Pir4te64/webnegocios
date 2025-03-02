@@ -52,8 +52,8 @@ const InvestmentProcess: React.FC = () => {
         {/* Título y descripción */}
         <div className="mb-4 text-center">
           <h2
-            className="text-2xl md:text-4xl font-bold text-white mb-2"
-            style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
+           className="block text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent leading-tight"
+           style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
           >
             Our Investment Process
           </h2>

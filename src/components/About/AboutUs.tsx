@@ -50,8 +50,8 @@ const Options: React.FC = () => {
       {/* Título superior con efecto glow */}
       <div className="mb-4 w-full max-w-md p-3 rounded-lg flex items-center justify-center">
         <h1
-          className="text-5xl text-center text-white font-ProductSans"
-          style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.8)" }}
+          className="block text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent leading-tight"
+          style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
         >
           ABOUT US
         </h1>

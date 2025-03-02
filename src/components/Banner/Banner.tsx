@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from "react";
 
 const Banner: React.FC = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize(); // Inicializa
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // Se fija la detección solo al montar el componente
+  const [isMobile] = useState<boolean>(window.innerWidth < 768);
 
   return (
     <section className="w-full h-screen relative flex items-center justify-center box-border font-ProductSans">
@@ -54,7 +46,7 @@ const Banner: React.FC = () => {
         {/* Columna de texto */}
         <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
           <h1 className="mt-5 drop-shadow-md">
-            {/* Título con glow */}
+            {/* Título con efecto glow */}
             <span
               className="block text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent leading-tight"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
@@ -67,10 +59,12 @@ const Banner: React.FC = () => {
             </span>
             {/* Texto explicativo */}
             <span className="block mt-2 text-lg md:text-2xl text-white max-w-3xl">
-              At Alta Group Miami, we connect investors with high-potential projects worldwide, ensuring compliance with U.S. regulations for maximum security and transparency.
+              At Alta Group Miami, we connect investors with high-potential projects worldwide,
+              ensuring compliance with U.S. regulations for maximum security and transparency.
             </span>
           </h1>
         </div>
+
         {/* Columna de imagen */}
         <div className="flex-1 flex items-center justify-center">
           <img

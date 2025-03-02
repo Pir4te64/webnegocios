@@ -46,10 +46,10 @@ const InvestmentSectors: React.FC = () => {
         {/* Título y descripción */}
         <div className="mb-8 text-center">
           <h2
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="block text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent leading-tight"
             style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
           >
-            Investment Sectors
+            INVESTMENT SECTORS
           </h2>
           <p className="text-lg md:text-base text-gray-200">
             We focus on industries with long-term growth potential and strong market demand.
