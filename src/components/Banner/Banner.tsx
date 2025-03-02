@@ -1,32 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Banner: React.FC = () => {
-  // Se fija la detección solo al montar el componente
-  const [isMobile] = useState<boolean>(window.innerWidth < 768);
-
   return (
     <section className="w-full h-screen relative flex items-center justify-center box-border font-ProductSans">
-      {/* Video de fondo para desktop: solo se renderiza si no es mobile */}
-      {!isMobile && (
-        <video
-          className="absolute inset-0 w-full h-full object-cover -z-10 shadow-lg"
-          autoPlay
-          muted
-          loop
-        >
-          <source src="/MIAMINOCHE_2.mp4" type="video/mp4" />
-          Tu navegador no soporta el video.
-        </video>
-      )}
-
-      {/* Imagen de fondo para mobile */}
-      {isMobile && (
-        <img
-          src="/Global.jpeg"
-          alt="Mobile Background"
-          className="absolute inset-0 w-full h-full object-cover -z-10"
-        />
-      )}
+      {/* Video de fondo para todas las resoluciones */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover -z-10 shadow-lg"
+        autoPlay
+        muted
+        loop
+      >
+        <source src="/MIAMINOCHE_2.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
 
       {/* Logo para desktop (visible en md y superiores) */}
       <img
@@ -46,18 +32,15 @@ const Banner: React.FC = () => {
         {/* Columna de texto */}
         <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
           <h1 className="mt-5 drop-shadow-md">
-            {/* Título con efecto glow */}
             <span
               className="block text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent leading-tight"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
             >
               Global Investment Opportunities with U.S.
             </span>
-            {/* Línea secundaria */}
             <span className="block mt-4 text-2xl md:text-4xl text-white">
               Security and Compliance
             </span>
-            {/* Texto explicativo */}
             <span className="block mt-2 text-lg md:text-2xl text-white max-w-3xl">
               At Alta Group Miami, we connect investors with high-potential projects worldwide,
               ensuring compliance with U.S. regulations for maximum security and transparency.
