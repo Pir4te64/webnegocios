@@ -9,6 +9,7 @@ const Banner: React.FC = () => {
         autoPlay
         muted
         loop
+        playsInline
       >
         <source src="/MIAMINOCHE_2.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
