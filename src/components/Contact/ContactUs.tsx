@@ -27,58 +27,54 @@ const ContactUs: React.FC = () => {
 
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center py-12"
+      className="relative w-full h-screen flex items-center justify-center py-4"
       style={{
         backgroundImage: "url('/Contact.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay oscuro para mejorar la legibilidad */}
+      {/* Overlay para mejorar legibilidad */}
       <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Contenedor principal */}
-      <div className="relative z-10 max-w-xl w-full mx-auto px-4 space-y-6">
-        {/* Sección de texto y CTA */}
-        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center shadow-md">
-          <h2 className="text-2xl font-bold text-white mb-2">
+      {/* Contenedor principal: dos cuadros (CTA y Formulario) */}
+      <div className="relative z-10 max-w-md w-full mx-auto px-2 space-y-4">
+        {/* Cuadro de CTA */}
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center shadow-sm">
+          <h2
+            className="text-xl font-bold text-white mb-1"
+            style={{ textShadow: "0 0 8px rgba(255,255,255,0.8)" }}
+          >
             Partner with Alta Group Miami
           </h2>
-          <p className="text-sm text-white">
-            Join a trusted investment group with a proven track record in securing
-            high-value global opportunities. Whether you are an individual investor
-            or a family office, we provide the expertise and strategic insights needed
-            to navigate today’s complex investment landscape.
+          <p className="text-xs text-white">
+            Join a trusted investment group with a proven track record in securing high-value global opportunities. Whether you are an individual investor or a family office, we provide the expertise and strategic insights needed to navigate today’s complex investment landscape.
           </p>
-          <h3 className="text-xl font-bold text-white mt-4">
+          <h3 className="text-lg font-bold text-white mt-2">
             Contact Us Today
           </h3>
-          <p className="text-sm text-white">
+          <p className="text-xs text-white">
             Secure your next investment with the strength of U.S. compliance and global expertise.
           </p>
-          <div className="mt-4">
-            <a
-              href="#contact-form"
-              className="inline-block px-4 py-2 bg-white text-black font-medium rounded transition-transform transform hover:scale-105"
-            >
-              Contact Us
-            </a>
+          <div className="mt-2">
+            
+            
           </div>
         </div>
 
-        {/* Sección del formulario de contacto */}
+        {/* Cuadro del formulario de contacto */}
         <div
           id="contact-form"
-          className="bg-white/20 backdrop-blur-sm rounded-lg p-6 shadow-md"
+          className="bg-white/20 backdrop-blur-sm rounded-lg p-4 shadow-sm"
         >
-          <h2 className="text-2xl font-bold text-white text-center mb-4">
+          <h2 className="text-xl font-bold text-white text-center mb-2">
             Contact Us
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-2">
             <div>
               <label
                 htmlFor="name"
-                className="block text-white text-sm font-medium mb-1"
+                className="block text-white text-xs font-medium mb-1"
               >
                 Name
               </label>
@@ -89,13 +85,13 @@ const ContactUs: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-2 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full p-1 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-white text-sm font-medium mb-1"
+                className="block text-white text-xs font-medium mb-1"
               >
                 Email
               </label>
@@ -106,13 +102,13 @@ const ContactUs: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-2 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full p-1 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="block text-white text-sm font-medium mb-1"
+                className="block text-white text-xs font-medium mb-1"
               >
                 Message
               </label>
@@ -122,19 +118,19 @@ const ContactUs: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={3}
-                className="w-full p-2 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
+                rows={2}
+                className="w-full p-1 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
             <button
               type="submit"
-              className="w-full py-2 bg-white text-black font-semibold rounded transition-transform transform hover:scale-105"
+              className="w-full py-1 bg-white text-black font-semibold rounded transition-transform transform hover:scale-105"
             >
               Send
             </button>
           </form>
           {formStatus && (
-            <p className="mt-2 text-center text-white text-sm">{formStatus}</p>
+            <p className="mt-1 text-center text-white text-xs">{formStatus}</p>
           )}
         </div>
       </div>

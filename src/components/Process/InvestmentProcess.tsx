@@ -4,35 +4,35 @@ import { FaSearch, FaShieldAlt, FaCogs, FaRocket } from "react-icons/fa";
 const InvestmentProcess: React.FC = () => {
   const processSteps = [
     {
-      title: "Market Analysis & Opportunity Assessment",
-      icon: <FaSearch className="text-4xl text-white" />,
+      title: "Market Analysis",
+      icon: <FaSearch className="text-2xl text-white" />,
       items: [
-        "Identifying high-potential sectors and emerging markets.",
-        "Conducting in-depth research and feasibility studies.",
+        "Identify high-potential sectors.",
+        "Conduct in-depth research.",
       ],
     },
     {
-      title: "Due Diligence & Risk Management",
-      icon: <FaShieldAlt className="text-4xl text-white" />,
+      title: "Due Diligence",
+      icon: <FaShieldAlt className="text-2xl text-white" />,
       items: [
-        "Comprehensive legal and financial evaluation.",
-        "Risk mitigation strategies to protect investor interests.",
+        "Legal & financial evaluation.",
+        "Mitigate risks.",
       ],
     },
     {
-      title: "Strategic Investment Structuring",
-      icon: <FaCogs className="text-4xl text-white" />,
+      title: "Investment Structuring",
+      icon: <FaCogs className="text-2xl text-white" />,
       items: [
-        "Customizing investment models to optimize returns.",
-        "Aligning projects with regulatory and financial frameworks.",
+        "Customize models.",
+        "Align with regulations.",
       ],
     },
     {
-      title: "Execution & Growth Optimization",
-      icon: <FaRocket className="text-4xl text-white" />,
+      title: "Growth Optimization",
+      icon: <FaRocket className="text-2xl text-white" />,
       items: [
-        "Active management of investments for long-term success.",
-        "Continuous monitoring and performance assessment.",
+        "Active management.",
+        "Continuous monitoring.",
       ],
     },
   ];
@@ -40,7 +40,7 @@ const InvestmentProcess: React.FC = () => {
   return (
     <section
       id="investment-process"
-      className="relative w-full min-h-screen flex flex-col items-center justify-center py-20"
+      className="relative w-full h-screen flex flex-col items-center justify-center py-4"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Investment2.jpeg')",
@@ -49,38 +49,69 @@ const InvestmentProcess: React.FC = () => {
       }}
     >
       <div className="w-full max-w-5xl px-4">
-        {/* Título y descripción de la sección */}
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        {/* Título y descripción */}
+        <div className="mb-4 text-center">
+          <h2
+            className="text-2xl md:text-4xl font-bold text-white mb-2"
+            style={{ textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
+          >
             Our Investment Process
           </h2>
-          <p className="text-lg text-gray-200">
-            We follow a rigorous process to ensure every investment is strategically structured and aligned with investor goals:
+          <p className="text-xs md:text-base text-gray-200">
+            We follow a rigorous process to ensure every investment is strategically structured and aligned with investor goals.
           </p>
         </div>
-        {/* Grid de tarjetas */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+        {/* Mobile: Grid de tarjetas minimalistas en 2 columnas */}
+        <div className="md:hidden grid grid-cols-2 gap-2 w-full px-4">
           {processSteps.map((step, index) => (
             <div
               key={index}
-              className="bg-white/20 backdrop-blur-lg border border-white/20 rounded-3xl shadow-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+              className="bg-white/20 backdrop-blur-sm border border-white/20 rounded-md shadow p-2 transition-transform duration-300 hover:scale-105"
+              style={{
+                backgroundImage: `${step.title ? "" : ""}`, // No se aplica fondo individual
+              }}
             >
               <div className="flex flex-col items-center">
-                {/* Ícono en un contenedor circular */}
-                <div className="bg-white/20 rounded-full p-4 mb-4">
+                <div className="mb-1">
                   {step.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-white text-center mb-4">
+                <h3 className="text-xs font-semibold text-white text-center">
                   {step.title}
                 </h3>
+                <ul className="list-disc list-inside text-[9px] text-white text-center">
+                  {step.items.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              <ul className="list-disc list-inside text-white space-y-2">
-                {step.items.map((item, idx) => (
-                  <li key={idx} className="text-base">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: Grid de tarjetas en 4 columnas con mayor espacio */}
+        <div className="hidden md:grid grid-cols-4 gap-8">
+          {processSteps.map((step, index) => (
+            <div
+              key={index}
+              className="bg-white/20 backdrop-blur-lg border border-white/20 rounded-3xl shadow-lg p-8 transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+              style={{
+                backgroundImage: `${step.title ? "" : ""}`, // Tarjetas tipo vidrio sin fondo individual
+              }}
+            >
+              <div className="flex flex-col items-center">
+                <div className="mb-4">
+                  {step.icon}
+                </div>
+                <h3 className="text-2xl font-semibold text-white text-center">
+                  {step.title}
+                </h3>
+                <ul className="list-disc list-inside text-white space-y-2 text-base text-center">
+                  {step.items.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
