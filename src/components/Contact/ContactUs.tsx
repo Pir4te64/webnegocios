@@ -1,28 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactUs: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const formRef = useRef<HTMLFormElement>(null);
   const [formStatus, setFormStatus] = useState("");
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("Sending...");
-    // Simulación de envío de formulario
-    setTimeout(() => {
-      setFormStatus("Message sent successfully.");
-      setFormData({ name: "", email: "", message: "" });
-    }, 2000);
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        "service_5nd8ff7", // Service ID
+        "template_dvmfovi", // Template ID
+        formRef.current, // Form Reference
+        "OnFxjh96VY04mSzI3" // Public Key (User ID)
+      )
+      .then(
+        () => {
+          setFormStatus("Message sent successfully.");
+          formRef.current?.reset();
+        },
+        (error) => {
+          console.error("Email sending error:", error);
+          setFormStatus("Error sending message. Try again.");
+        }
+      );
   };
 
   return (
@@ -34,12 +39,9 @@ const ContactUs: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay para mejorar legibilidad */}
       <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Contenedor principal: dos cuadros (CTA y Formulario) */}
       <div className="relative z-10 max-w-md w-full mx-auto px-2 space-y-4">
-        {/* Cuadro de CTA */}
         <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center shadow-sm">
           <h2
             className="text-xl font-bold text-white mb-1"
@@ -48,7 +50,7 @@ const ContactUs: React.FC = () => {
             Partner with Alta Group Miami
           </h2>
           <p className="text-xs text-white">
-            Join a trusted investment group with a proven track record in securing high-value global opportunities. Whether you are an individual investor or a family office, we provide the expertise and strategic insights needed to navigate today’s complex investment landscape.
+            Join a trusted investment group with a proven track record in securing high-value global opportunities.
           </p>
           <h3 className="text-lg font-bold text-white mt-2">
             Contact Us Today
@@ -56,67 +58,44 @@ const ContactUs: React.FC = () => {
           <p className="text-xs text-white">
             Secure your next investment with the strength of U.S. compliance and global expertise.
           </p>
-          <div className="mt-2">
-            
-            
-          </div>
         </div>
 
-        {/* Cuadro del formulario de contacto */}
-        <div
-          id="contact-form"
-          className="bg-white/20 backdrop-blur-sm rounded-lg p-4 shadow-sm"
-        >
+        <div id="contact-form" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 shadow-sm">
           <h2 className="text-xl font-bold text-white text-center mb-2">
             Contact Us
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-2">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-2">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-white text-xs font-medium mb-1"
-              >
+              <label htmlFor="name" className="block text-white text-xs font-medium mb-1">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 required
                 className="w-full p-1 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-white text-xs font-medium mb-1"
-              >
+              <label htmlFor="email" className="block text-white text-xs font-medium mb-1">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 required
                 className="w-full p-1 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
             <div>
-              <label
-                htmlFor="message"
-                className="block text-white text-xs font-medium mb-1"
-              >
+              <label htmlFor="message" className="block text-white text-xs font-medium mb-1">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 required
                 rows={2}
                 className="w-full p-1 rounded bg-white/50 text-black focus:outline-none focus:ring-2 focus:ring-white"

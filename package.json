@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fullpage/react-fullpage": "^0.1.48",
     "@tailwindcss/vite": "^4.0.9",
     "@vercel/speed-insights": "^1.2.0",
+    "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
     "fullpage.js": "^4.0.33",
     "react": "^19.0.0",
