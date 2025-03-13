@@ -72,5 +72,6 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./            # <-- Sube la raíz (que contiene el build)
+          local-dir: ./   
           server-dir: /public_html/
+          dangerous-clean-slate: true # <-- borra todo en /public_html/ antes de subir
